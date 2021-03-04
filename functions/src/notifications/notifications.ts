@@ -14,7 +14,7 @@ export async function sendNotificationToSingleDevice(title: any, body: any, badg
             "DATA": data
         }
     };
-    return messagingAdmin.sendToDevice(messageToken, payload);
+    return messagingAdmin.sendToDevice([messageToken], payload);
 }
 
 export async function sendNotificationToMultipleDevices(title: any, body: any, badgeCount: any, type: any, data: any, messageTokens: any) {
