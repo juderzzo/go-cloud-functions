@@ -43,8 +43,7 @@ export const createNotificationTrigger = functions.firestore
         const badgeCount = await getNumberOfUnreadNotifications(receiverUID);
         const type = data.type;
         const additionalData = data.additionalData.toString();
-        const messageToken = getUserMessageToken(receiverUID);
-
+        const messageToken = await getUserMessageToken(receiverUID);
         if (messageToken !== undefined){
             await notificationFunctions.sendNotificationToSingleDevice(title, body, badgeCount.toString(), type, additionalData, messageToken);
         } else {
