@@ -3,7 +3,7 @@ import * as functions from "firebase-functions";
 import * as admin from 'firebase-admin'
 
 // Custom Imports
-import * as notificationFunctions from "../notifications/notifications";
+import * as notificationFunctions from "../services/notifications/notifications_service";
 
 // Data Collections
 const database = admin.firestore();
